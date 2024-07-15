@@ -1,0 +1,87 @@
+.room-section {
+    background-image: url(../../../img/roomBack2.jpg);
+    /* background-color: #001b40; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;  /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-sizing: border-box;    
+}
+
+.room-reservation-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    height: 100vh;
+    background-color: #f0f0f0; /* Background color for the whole page */
+}
+
+.room-section {
+    width: 90%; /* Occupy almost the full screen width */
+    margin-left: 0; /* Align the table to the left */
+}
+
+.header_room {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #ccc;
+}
+
+.room-card-container {
+    justify-content: left;
+    width: 80%;
+    overflow-x: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.room-table th, .room-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.room-table th {
+    background-color: #4CAF50; /* Header background color */
+    color: white;
+}
+
+.room-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.room-table tr:nth-child(odd) {
+    background-color: #e9e9e9;
+}
+
+.room-table tr:hover {
+    background-color: #ddd;
+}
+
+.room-table td {
+    background-color: #fff;
+}
+
+.busy-room td{
+    background-color: red;
+    color: white;
+}
+
+.reserve-btn:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
