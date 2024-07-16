@@ -24,9 +24,9 @@ export const Login = ({ onLoginSuccess }) => {
         })
         .then(data => {
             console.log(data);
-            // if (data.role !== "ADMIN") {
-            //     throw new Error('Access denied: User is not an ADMIN');
-            // }
+            if (data.role !== "SUPERAPP_USER") {
+                throw new Error('Access denied: User is not an SUPERAPP_USER');
+            }
             alert('Login success');
             onLoginSuccess(data);
             navigate('/RoomReservation');
