@@ -23,10 +23,7 @@ function App() {
       <Route path="/Login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
       <Route path="/Register" element={<Register />} />
       <Route path="/RoomReservation" element={<RoomReservation user={user}/>} />
-
-
-
-
+      
     </Routes>
     </div>
   );
