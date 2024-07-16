@@ -4,7 +4,7 @@ import "../pages/css_pages/room.css";
 import axios from "axios";
 
 export const RoomReservation = ({user}) => {
-   
+
     const [Rooms, setRooms] = useState([]);
     const [userDetails] = useState({ superapp: "citylibrary", email: user ? user.userid.email: "" }); 
     const hasFetchedRef = useRef(false); // Using useRef to track fetch status
@@ -47,6 +47,9 @@ export const RoomReservation = ({user}) => {
                 allRooms = [...allRooms, ...rooms];
             }
     
+            allRooms.sort((a, b) => a.id - b.id);
+
+
             setRooms(allRooms); // Assuming setRooms is a state updater function
             console.log(allRooms);
     
@@ -90,6 +93,8 @@ export const RoomReservation = ({user}) => {
             console.log(roomId);
             if(response.data) {
                 console.log('Response data: ', response.data);
+                alert("room reserved success");
+
                 handleFetchRooms();
             }
 
@@ -120,7 +125,7 @@ export const RoomReservation = ({user}) => {
             console.log(roomId);
             if (response.data) {
                 console.log("Response data:", response.data);
-                // Update rooms after cancellation
+                alert("reservation canceled");
                 handleFetchRooms();
             }
         } catch (error) {
@@ -152,8 +157,10 @@ export const RoomReservation = ({user}) => {
                                     <td>{room.id}</td>
                                     <td>{room.participants}</td>
                                     <td>{room.status}</td>
-                                    {room.status === "Available" ? (
+                                    <td className="center-button">
+                                        {room.status === "Available" ? (
                                             <button
+                                                className="reserve-button"
                                                 onClick={() =>
                                                     handelReserve(
                                                         userDetails.email,
@@ -165,6 +172,7 @@ export const RoomReservation = ({user}) => {
                                             </button>
                                         ) : (
                                             <button
+                                                className="cancel-button"
                                                 onClick={() =>
                                                     handleCancelReservation(
                                                         room.id
@@ -174,10 +182,9 @@ export const RoomReservation = ({user}) => {
                                                 Cancel
                                             </button>
                                         )}
+                                    </td>
                                 </tr>
                             ))}
-
-
                         </tbody>
                     </table>
                 </div>

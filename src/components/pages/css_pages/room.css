@@ -85,3 +85,27 @@
     background-color: #888;
     cursor: not-allowed;
 }
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reserve-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cancel-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
