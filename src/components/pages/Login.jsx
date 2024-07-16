@@ -29,7 +29,7 @@ export const Login = ({ onLoginSuccess }) => {
             // }
             alert('Login success');
             onLoginSuccess(data);
-            navigate('/LibrarianDash');
+            navigate('/RoomReservation');
         })
         .catch(error => {
             alert('Login failed: ' + error.message);
